@@ -14,8 +14,8 @@
     </head>
     <body>
         <h1>Hello World!</h1>
-        <s:property value="usuario"/>
         <%
+         out.println(session.getAttribute("usuario"));
          out.println(session.getAttribute("rol"));
         %>
     </body>
