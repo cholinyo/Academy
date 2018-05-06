@@ -18,7 +18,7 @@ import java.sql.ResultSet;
 public class Usuario {
 
     private int idusuario;
-    private String user;
+    private String login;
     private String passowrd;
     private String nombre;
     private String apellidos;
@@ -29,8 +29,8 @@ public class Usuario {
         return idusuario;
     }
 
-    public String getUser() {
-        return user;
+    public String getLogin() {
+        return login;
     }
 
     public String getPassowrd() {
@@ -57,8 +57,8 @@ public class Usuario {
         this.idusuario = idusuario;
     }
 
-    public void setUser(String user) {
-        this.user = user;
+    public void setLogin(String login) {
+        this.login = login;
     }
 
     public void setPassowrd(String passowrd) {

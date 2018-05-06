@@ -1,0 +1,112 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 06-may-2018, 11:19:47
+    Author     : vcaruncho
+*/
+
+@charset "ISO-8859-1";
+
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+
+header {background-image: url("../images/Academia_banner.png");
+		height: 300px;
+}
+panel-body{
+	
+	font-size: 1.2em;
+}
+
+
+/* MENU */
+
+.menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: grey;
+}
+
+
+/* NOTICIAS */
+.noticia {
+	padding: 10px;
+
+}
+.linea_noticia{
+	margin-top: 10px;
+}
+
+.noticia img{
+	
+	width:250px;
+	margin: 20px 15px 5px 10px;
+}
+.imagen_noticia{
+	float: left;
+}
+
+.imagen_noticia img {
+	padding: 15px;
+	width: 30%;
+	
+}
+.titulo_noticia {
+	color: grey;
+	font-size: 20px;
+	margin-top: 15px;
+	text-align: center;
+}
+.cuerpo_noticia{
+	
+	text-align: justify;
+}
+
+/* FORMULARIOS */
+
+.form-group {
+	align-items: center;
+}
+
+.login {
+	background-color: #f8f8f8;
+	border-radius: 4px;
+	border-width: 5px;
+	border-color: #e7e7e7;
+	
+}
+.login > h4{
+	text-align: center;
+	color: grey;
+}
+
+
+#map {
+  height:200px;
+  width: 100%;
+ }
+ 
+.mapa > h4{
+	color: grey;
+}
+ 
+ 
+
+/* PIE */
+.imagen_pie {
+	height: 100px;
+}
+
+.link_footer{
+	
+}

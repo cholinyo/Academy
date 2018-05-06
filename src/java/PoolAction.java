@@ -22,6 +22,7 @@ public class PoolAction extends ActionSupport implements SessionAware {
     private Connection conn;
     private String usuario;
     private String contrasena;
+    private int idusuario;
     private Map<String, Object> sesion;
 
     public String getUsuario() {
@@ -56,16 +57,17 @@ public class PoolAction extends ActionSupport implements SessionAware {
         dataSource = (DataSource)ctx.lookup("java:comp/env/jdbc/dbacademia");
         conn = dataSource.getConnection();
         Statement s = conn.createStatement();
-        String query = "select * from usuarios where " + "user='"+usuario+"' and password='"+contrasena+"'";
+        String query = "select * from usuarios where " + "login='"+usuario+"' and password='"+contrasena+"'";
         ResultSet rs = s.executeQuery(query);
         if (rs.next()) acceso=true;
+        String rol = rs.getString(6);
         rs.close();
         s.close();
         conn.close();
         if (acceso) {
-            sesion.put("usuario", usuario);
-            sesion.put("rol", 1);
-            
+            sesion.put("login", usuario);  
+            sesion.put("idusuario", idusuario);
+            sesion.put("rol", rol);
             /*Faltara el rol*/
             return SUCCESS;
         }
