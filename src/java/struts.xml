@@ -9,5 +9,11 @@
             <result name="input">index.jsp</result>
             <result name="success">home.jsp</result>       
         </action>
+        <action name="altausuario" class="AltaUsuario">
+            
+            <result name="success">home.jsp</result>       
+        </action>     
     </package>
+   
+    
 </struts>

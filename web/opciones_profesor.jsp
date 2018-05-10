@@ -6,7 +6,7 @@ switch (rol)
 case "profesor":
 	break;
 default:
-	response.sendRedirect("index.html");
+	response.sendRedirect("index.jsp");
 }
 %>
 	<div class="container">

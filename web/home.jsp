@@ -1,4 +1,4 @@
-<%-- 
+<%--
     Document   : home
     Created on : 29-abr-2018, 10:57:46
     Author     : vcaruncho
@@ -24,21 +24,18 @@
           integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
           crossorigin="anonymous">
 </head>
-<body>
-    <jsp:include page="vistas/cabecera.jsp" />
-    <s:set name="rol" value="#session.rol"/>
-    <s:if test="%{#rol=='admin'}">
-        <p>Opciones Admin</p>
-        <jsp:include page="opciones_admin.jsp" />
-    </s:if>
-    <s:elseif test="%{#rol=='profesor'">
-        <p>Opciones profesor</p>
-        <jsp:include page="opciones_profesor.jsp" />
-    </s:elseif>
-        <s:else>
-        <p>Opciones estudiante</p>
-        <jsp:include page="opciones_profesor.jsp" />
-    </s:else>
-</body>
+
+<jsp:include page="vistas/cabecera.jsp" />
+<s:set name="rol" value="#session.rol"/>
+<s:if test="%{#rol=='admin'}">
+    <jsp:include page="opciones_admin.jsp" />
+</s:if>
+<s:elseif test="%{#rol=='profesor'}">
+    <jsp:include page="opciones_estudiante.jsp" /> 
+</s:elseif>
+<s:elseif test="%{#rol=='estudiante'}">
+    <jsp:include page="opciones_estudiante.jsp" /> 
+</s:elseif>
+
 <jsp:include page="vistas/pie.jsp" />
 </html>
