@@ -4,10 +4,11 @@
  * and open the template in the editor.
  */
 
-
 import static com.opensymphony.xwork2.Action.INPUT;
 import static com.opensymphony.xwork2.Action.SUCCESS;
 import com.opensymphony.xwork2.ActionSupport;
+import com.opensymphony.xwork2.Validateable;
+import com.opensymphony.xwork2.ModelDriven;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -20,7 +21,7 @@ import javax.sql.DataSource;
  *
  * @author vcaruncho
  */
-public class AltaUsuario extends ActionSupport {
+public class AltaUsuario extends ActionSupport implements ModelDriven<Usuario> , Validateable{
 
     private String login;
     private String password;
@@ -30,6 +31,13 @@ public class AltaUsuario extends ActionSupport {
     private String baja;
     private DataSource dataSource;
     private Connection conn;
+    
+    private Usuario usuario = new Usuario();
+    
+    @Override
+    public Usuario getModel() {
+        return usuario;
+    }
 
     public void setPassword(String password) {
         this.password = password;
@@ -79,7 +87,11 @@ public class AltaUsuario extends ActionSupport {
         return login;
     }
 
-    public AltaUsuario() {
+    @Override
+    public void validate() {
+        if (getLogin().length() == 0) {
+            addFieldError("login", "El nombre es necesario");
+        }
     }
 
     @Override
@@ -91,7 +103,7 @@ public class AltaUsuario extends ActionSupport {
         }
         dataSource = (DataSource) ctx.lookup("java:comp/env/jdbc/dbacademia");
         conn = dataSource.getConnection();
-        Statement s = conn.createStatement();
+        /* Statement s = conn.createStatement(); */
 
         String qry = "INSERT INTO usuarios (login, password, nombre, apellidos, rol, baja) VALUES (?, ?, ?, ?, ? ,?)";
         PreparedStatement pstmt = conn.prepareStatement(qry);
@@ -101,16 +113,10 @@ public class AltaUsuario extends ActionSupport {
         pstmt.setString(4, apellidos);
         pstmt.setString(5, rol);
         pstmt.setString(6, "no");
-
-        ResultSet rs = s.executeQuery(qry);
-        if (rs.next()) {
-            acceso = true;
-        }
-        String rol = rs.getString(6);
-        rs.close();
-        s.close();
+        pstmt.executeUpdate();
+        pstmt.close();
         conn.close();
-            return SUCCESS;
+        return SUCCESS;
     }
 
 }

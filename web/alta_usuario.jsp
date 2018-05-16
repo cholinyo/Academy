@@ -38,7 +38,7 @@
                         <s:textfield name="password2" label="Repetir contrasenya" />
                         <s:textfield name="nombre" label="Nombre" />
                         <s:textfield name="apellidos" label="Apellidos" />
-                        <s:radio  list="{'Administrador','Profesor','Estudiante'}" selected="1" name="rol" label="Rol"/>
+                        <s:radio  list="{'admin','profesor','estudiante'}" selected="1" name="rol" label="Rol"/>
                         <s:submit value="Enviar"/>
                     </s:form>
 
