@@ -1,6 +1,4 @@
 
-
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -19,7 +17,7 @@ public class Usuario {
 
     private int idusuario;
     private String login;
-    private String passowrd;
+    private String password;
     private String nombre;
     private String apellidos;
     private String rol;
@@ -33,8 +31,8 @@ public class Usuario {
         return login;
     }
 
-    public String getPassowrd() {
-        return passowrd;
+    public String getPassword() {
+        return password;
     }
 
     public String getNombre() {
@@ -61,8 +59,8 @@ public class Usuario {
         this.login = login;
     }
 
-    public void setPassowrd(String passowrd) {
-        this.passowrd = passowrd;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public void setNombre(String nombre) {

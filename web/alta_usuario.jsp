@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
 <%@taglib prefix="s" uri="/struts-tags" %>
+<%@taglib prefix="sb" uri="/struts-bootstrap-tags" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 
@@ -39,15 +40,9 @@
                         <s:textfield name="nombre" label="Nombre" />
                         <s:textfield name="apellidos" label="Apellidos" />
                         <s:radio  list="{'admin','profesor','estudiante'}" selected="1" name="rol" label="Rol"/>
-                        <s:submit value="Enviar"/>
-                    </s:form>
-
-                </div>
-                <button type="submit" class="btn btn-default" onclick="history.back()">Atrás</button>
-                <button type="submit" class="btn btn-default"  >Enviar</button>
-
-                </form>
-
+                        <s:submit class="btn btn-default" value="Enviar"/>
+                        <a href=".http://localhost:8080/Academy/login.action"><button>Atrás</button></a>
+                </s:form>
             </div>
         </div>
     </div>

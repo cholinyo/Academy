@@ -11,9 +11,7 @@
         </action>
         <action name="altausuario" class="AltaUsuario">            
             <result name="success">home.jsp</result>
-            <result name="input">home.jsp</result>
-            
-                   
+            <result name="input">alta_usuario.jsp</result>                 
         </action>     
     </package>
    
