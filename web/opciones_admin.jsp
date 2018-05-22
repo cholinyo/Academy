@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <!-- <head>
  Bootstrap CSS
 <link rel="stylesheet"
@@ -19,8 +20,7 @@
 					<div class="panel-body">
 						<ul class="list-inline">
 							<li><a href="alta_usuario.jsp">Altas usuarios<img src=""></a></li>
-							<li><a href="listado_usuarios_pag.jsp?tipo=estudiante">Gestion
-									de Alumnos<img src="">
+                                                        <li><a href="<s:url action="listadoestudiantes"  />">Gestion de Alumnos<img src="">
 							</a></li>
 							<li><a href="listado_usuarios.jsp?tipo=profesor">Gestion
 									de Profesores<img src="">

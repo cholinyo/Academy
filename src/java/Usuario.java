@@ -22,7 +22,8 @@ public class Usuario {
     private String apellidos;
     private String rol;
     private String baja;
-
+    
+    
     public int getIdusuario() {
         return idusuario;
     }

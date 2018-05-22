@@ -49,7 +49,7 @@ public class ConsultaUsuarios {
 	            usuario.setIdusuario(rs.getInt("idusuario"));
 	            usuario.setLogin(rs.getString("login"));
 	            usuario.setNombre(rs.getString("nombre"));
-	            usuario.setApellido(rs.getString("apellidos"));
+	            usuario.setApellidos(rs.getString("apellidos"));
 	            usuario.setRol(rs.getString("rol"));
 	            listaUsuarios.add(usuario);
 	         }

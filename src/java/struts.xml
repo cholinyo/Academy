@@ -12,7 +12,10 @@
         <action name="altausuario" class="AltaUsuario">            
             <result name="success">home.jsp</result>
             <result name="input">alta_usuario.jsp</result>                 
-        </action>     
+        </action>
+        <action name="listadoestudiantes" class="ListadoUsuarios">            
+            <result name="Listado">listado_estudiantes.jsp</result>
+        </action>
     </package>
    
     

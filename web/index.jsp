@@ -4,8 +4,8 @@
     Author     : vcaruncho
 --%>
 <%@ taglib prefix="s" uri="/struts-tags" %>
-<%@ taglib prefix="sb" uri="/struts-bootstrap-tags" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,7 +16,7 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
 	integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
 	crossorigin="anonymous">
-<link rel="stylesheet" type="text/css" href="css/theme.css"">
+<link rel="stylesheet" type="text/css" href="css/theme.css">
 <script src="js/funciones.js" type="text/javascript"></script>
 </head>
 <body onload="initMap()">
