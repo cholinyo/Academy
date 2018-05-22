@@ -19,14 +19,14 @@
     </head>
     <body>
         <jsp:include page="vistas/cabecera.jsp" />
-        <h2>Estudiantes introducidos en el sistema </h2>
+        <h2>Profesores introducidos en el sistema </h2>
         <table>
             <th>Id</th>
             <th>Usuario</th>
             <th>Nombre</th>
             <th>Apellidos</th>
             <th>Baja</th>
-            <s:iterator value="listaestudiantes">
+            <s:iterator value="listaprofesores">
                 
                 <tr>
                 <td><s:property value="idusuario"></s:property></td>

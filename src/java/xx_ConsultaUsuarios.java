@@ -3,7 +3,7 @@
 import java.sql.*;
 import java.util.LinkedList;
 
-public class ConsultaUsuarios {
+public class xx_ConsultaUsuarios {
 
 	public static LinkedList<Usuario> getUsuarios()
 	   {

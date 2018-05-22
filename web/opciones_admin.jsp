@@ -22,8 +22,7 @@
 							<li><a href="alta_usuario.jsp">Altas usuarios<img src=""></a></li>
                                                         <li><a href="<s:url action="listadoestudiantes"  />">Gestion de Alumnos<img src="">
 							</a></li>
-							<li><a href="listado_usuarios.jsp?tipo=profesor">Gestion
-									de Profesores<img src="">
+							<li><a href="<s:url action="listadoprofesores"  />">Gestion de Profesores<img src="">
 							</a></li>
 						</ul>
 					</div>

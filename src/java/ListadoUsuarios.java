@@ -27,6 +27,7 @@ public class ListadoUsuarios extends ActionSupport {
     private int anterior=-1;
     private int posterior=-1;
     private ArrayList<Usuario> listaestudiantes;
+    private ArrayList<Usuario> listaprofesores;
 
     public int getAnterior() {
         return anterior;
@@ -60,7 +61,7 @@ public class ListadoUsuarios extends ActionSupport {
         DataSource dataSource = (DataSource)ctx.lookup("java:comp/env/jdbc/dbacademia");
         Connection conn = dataSource.getConnection();
         Statement s = conn.createStatement();
-        String query ="select * from usuarios limit " + (npage*eltosXpage)+","+eltosXpage; 
+        String query ="select * from usuarios where rol='estudiante' limit " + (npage*eltosXpage)+","+eltosXpage; 
         ResultSet rs = s.executeQuery(query);
         anterior = npage -1;
         posterior = npage +1;
@@ -84,6 +85,36 @@ public class ListadoUsuarios extends ActionSupport {
         return listaestudiantes;
     }
     
+    
+    public ArrayList<Usuario> getListaprofesores() throws NamingException, Exception {
+        Context ctx = new InitialContext();
+        if (ctx == null) throw new Exception("Error en el context");
+        DataSource dataSource = (DataSource)ctx.lookup("java:comp/env/jdbc/dbacademia");
+        Connection conn = dataSource.getConnection();
+        Statement s = conn.createStatement();
+        String query ="select * from usuarios where rol='profesor' limit " + (npage*eltosXpage)+","+eltosXpage; 
+        ResultSet rs = s.executeQuery(query);
+        anterior = npage -1;
+        posterior = npage +1;
+        listaprofesores = new ArrayList<>();
+        int contadorEltos = 0;
+        while (rs.next() && contadorEltos<eltosXpage) 
+        {   
+        Usuario user = new Usuario();
+        user.setIdusuario(rs.getInt(1));
+        user.setLogin(rs.getString(2));
+        user.setNombre(rs.getString(4));
+        user.setApellidos(rs.getString(5));
+         user.setBaja(rs.getString(7));
+        listaprofesores.add(user);
+        contadorEltos++;
+	         }
+        if (contadorEltos<eltosXpage) posterior=-1;
+        rs.close();
+        s.close();
+        conn.close(); 
+        return listaprofesores;
+    }
     
 
     @Override
