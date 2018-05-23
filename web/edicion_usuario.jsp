@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -13,5 +14,7 @@
     </head>
     <body>
         <h1>Edicion usuario</h1>
+        <p>id:<s:property value="user.idusuario"/></p>
+        
     </body>
 </html>

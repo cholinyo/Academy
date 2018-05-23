@@ -34,7 +34,10 @@
                 <td><s:property value="nombre"></s:property></td>
                 <td><s:property value="apellidos"></s:property></td>
                 <td><s:property value="baja"></s:property></td>
-                <td><a href="<s:url action="editarusuario" ><s:param name="idusuario"><s:property value="#idusuario"/></s:param></s:url>  />  ">Editar</a></td>
+                <td><a href="<s:url action="editarusuario">
+                           
+                        </s:url>">
+                        Editar</a></td>
                 </tr>
             </s:iterator>    
         </table>

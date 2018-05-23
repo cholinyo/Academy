@@ -105,7 +105,7 @@ public class ListadoUsuarios extends ActionSupport {
         user.setLogin(rs.getString(2));
         user.setNombre(rs.getString(4));
         user.setApellidos(rs.getString(5));
-         user.setBaja(rs.getString(7));
+        user.setBaja(rs.getString(7));
         listaprofesores.add(user);
         contadorEltos++;
 	         }
