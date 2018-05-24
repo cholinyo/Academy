@@ -19,11 +19,8 @@
         <action name="listadoprofesores" class="ListadoUsuarios">            
             <result name="Listado">listado_profesores.jsp</result>
         </action>
-        <action name="editarusuario" class="EditarUsuario">            
+        <action name="editarusuario" class="EditarUsuario">
             <result name="success">edicion_usuario.jsp</result>
-        </action>
-         
+        </action>   
     </package>
-   
-    
 </struts>

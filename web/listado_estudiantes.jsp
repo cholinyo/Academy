@@ -34,9 +34,8 @@
                 <td><s:property value="nombre"></s:property></td>
                 <td><s:property value="apellidos"></s:property></td>
                 <td><s:property value="baja"></s:property></td>
-                <td><a href=" <s:url action="editarusuario">
-                            <s:param name="idusuario">
-                                <s:property value="idusuario"/>
+                <td><a href=" <s:url action="editarusuario" includeParams="get">
+                            <s:param name="idusuario" value="idusuario">                        
                             </s:param>
                         </s:url>">Editar</a></td>
                 </tr>            

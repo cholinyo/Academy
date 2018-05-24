@@ -16,7 +16,11 @@
     <body>
         <h1>Edicion usuario</h1>
         <s:form class="form-horizontal" action="modificausuario" namespace="/">
+             <h2><s:property value="idusuario" /></h2> 
+             <h2><s:property value="login" /></h2>
+              <h2><s:property value="user.getUsuario" /></h2>
+             <h2><s:property value="user.login" /></h2>
             <s:textfield name="login" label="Usuario" placeholder="%{#user.login}"></s:textfield></s:form>
-        <h2><s:property value="usuario.idusuario" /></h2>         
+        <h2><s:property value="apellidos" /></h2>         
     </body>
 </html>
