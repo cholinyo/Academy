@@ -22,11 +22,16 @@ import javax.sql.DataSource;
 public class EditarUsuario extends ActionSupport{
     Usuario usuario = new Usuario();
     private DataSource dataSource;
-    private Connection conn;
-
-  
+    private Connection conn;  
     
 
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }  
     
     @Override
     public String execute() throws Exception {

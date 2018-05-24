@@ -12,9 +12,11 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
+    
     <body>
         <h1>Edicion usuario</h1>
-        <p>id:<s:property value="user.idusuario"/></p>
-        
+        <s:form class="form-horizontal" action="modificausuario" namespace="/">
+            <s:textfield name="login" label="Usuario" placeholder="%{#user.login}"></s:textfield></s:form>
+        <h2><s:property value="usuario.idusuario" /></h2>         
     </body>
 </html>
