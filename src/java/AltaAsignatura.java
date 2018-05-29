@@ -31,8 +31,8 @@ public class AltaAsignatura extends ActionSupport implements ModelDriven<Asignat
     
        @Override
     public void validate() {
-        if (asignatura.getNombre().length() == 0) {
-            addFieldError("login", "Es necesario introducir un login");
+        if (asignatura.getNombre() == null) {
+            addFieldError("login", "Es necesario introducir el nombre de la asginatura");
         }
         if (asignatura.getProfesor()== null) {
             addFieldError("profesor", "El password tiene que tener mas de 4 carcacteres");

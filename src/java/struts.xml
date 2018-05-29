@@ -54,7 +54,27 @@
          <action name="bajaasignatura" class="BajaAsignatura" >            
             <result name="success">home.jsp</result>            
         </action>
-        
-           
+         <action name="editaasignaturas" class="DatosAsignatura"  >            
+            <result name="success">modifica_asignatura.jsp</result>            
+        </action>
+        <action name="modificaasignatura" class="DatosAsignatura"  >            
+            <result name="success">home.jsp</result>
+            <result name="input">modifica_asignatura.jsp</result>            
+        </action>
+        <action name="listamatriculados" class="Matriculados" >            
+            <result name="success">matriculas.jsp</result>      
+        </action>
+        <action name="desmatricula" class="Desmatricula" >            
+            <result name="success">home.jsp</result>      
+        </action>
+                <action name="matricula" class="Matricula" >            
+            <result name="success">home.jsp</result>      
+        </action> 
+        <action name="listanomatriculados" class="Nomatriculados" >            
+            <result name="success">nomatriculas.jsp</result>      
+        </action> 
+        <action name="listadoasignaturasprofesor" class="Profesor" >            
+            <result name="success">asignaturas_profesor.jsp</result>      
+        </action>
     </package>
 </struts>

@@ -31,7 +31,7 @@
     <jsp:include page="opciones_admin.jsp" />
 </s:if>
 <s:elseif test="%{#rol=='profesor'}">
-    <jsp:include page="opciones_estudiante.jsp" /> 
+    <jsp:include page="opciones_profesor.jsp" /> 
 </s:elseif>
 <s:elseif test="%{#rol=='estudiante'}">
     <jsp:include page="opciones_estudiante.jsp" /> 

@@ -37,11 +37,12 @@
                     <table class="table table-striped">
                         <th>Id</th>
                         <th>Asignatura</th>
-                        <th>Nombre</th>
+                        <th>Horario</th>
                         <th>Profesor</th>
                         <th>Estado</th>
                         <th>Editar</th>
                         <th>Matricular</th>
+                         <th>Desmatricular</th>
                         <th>Dar de alta</th>
                         <th>Dar de baja</th>
                             <s:iterator value="listaasignaturas">
@@ -52,15 +53,24 @@
                                 <td><s:property value="horario"></s:property></td>
                                 <td><s:property value="profesor"></s:property></td>
                                 <td><s:property value="estado"></s:property></td>
-                                <td><a href=" <s:url action="editarasignatura" includeParams="get">
-                                           <s:param name="idasignatura" value="idasignatura">                        
-                                           </s:param>                                          
-                                       </s:url>">Editar</a></td>
-                                
-                                <td><a href=" <s:url action="activaasignatura" includeParams="get">
+                                <td><a href=" <s:url action="editaasignaturas" includeParams="get">
                                            <s:param name="idasignatura" value="idasignatura">                        
                                            </s:param>
-                                       </s:url>">Asginar Alumnos</a></td>
+                                           <s:param name="profesor" value="profesor">                        
+                                           </s:param>
+                                       </s:url>">Editar</a></td>
+                                <td><a href=" <s:url action="listanomatriculados" includeParams="get">
+                                           <s:param name="idasignatura" value="idasignatura">                        
+                                           </s:param>
+                                           <s:param name="nombre" value="nombre">                        
+                                           </s:param>
+                                       </s:url>">Matricular Alumnos</a></td>
+                                <td><a href=" <s:url action="listamatriculados" includeParams="get">
+                                           <s:param name="idasignatura" value="idasignatura">                        
+                                           </s:param>
+                                           <s:param name="nombre" value="nombre">                        
+                                           </s:param>
+                                       </s:url>">Desmatricular Alumnos</a></td>
                                 <td><a href=" <s:url action="activaasignatura" includeParams="get">
                                            <s:param name="idasignatura" value="idasignatura">                        
                                            </s:param>
