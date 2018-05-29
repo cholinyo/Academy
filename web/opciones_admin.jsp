@@ -33,11 +33,11 @@
 					</div>
 					<div class="panel-body">
 						<ul class="list-inline">
-							<li><a href="alta_asingatura.jsp">Altas Asignaturas<img
-									src=""></a></li>
-							<li><a href="gestionasignaturas.jsp">Gestion de
-									Asignaturas<img src="">
+							<li><a href="<s:url action="altaasignaturas" />">Altas Asignatura<img src=""></a></li>
+							<li><a href="<s:url action="listadoasignaturas"  />">Gestion de Asignaturas<img src="">
 							</a></li>
+
+                                                        
 						</ul>
 					</div>
 				</div>

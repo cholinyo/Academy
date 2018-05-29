@@ -24,7 +24,24 @@ public class EditarUsuario extends ActionSupport {
     private DataSource dataSource;
     private Connection conn;
     private int idusuario;
+    private String login;
+    private String nombre;
 
+    public void setLogin(String login) {
+        this.login = login;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getLogin() {
+        return login;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
 
     public int getIdusuario() {
         return idusuario;
@@ -48,7 +65,7 @@ public class EditarUsuario extends ActionSupport {
 
     @Override
     public String execute() throws Exception {
-        boolean acceso = false;
+      /*  boolean acceso = false;
         Context ctx = new InitialContext();
         if (ctx == null) {
             throw new Exception("Error en el context");
@@ -59,17 +76,17 @@ public class EditarUsuario extends ActionSupport {
         String query = "select * from usuarios where idusuario='" + idusuario + "'";
         ResultSet rs = s.executeQuery(query);
         if (rs.next()) {
-        Usuario user = new Usuario();
-        user.setIdusuario(rs.getInt(1));
-        user.setLogin(rs.getString(2));
-        user.setNombre(rs.getString(4));
-        user.setApellidos(rs.getString(5));
-        user.setBaja(rs.getString(7));
+            Usuario usuario = new Usuario();
+            usuario.setIdusuario(rs.getInt(1));
+            usuario.setLogin(rs.getString(2));
+            usuario.setNombre(rs.getString(4));
+            usuario.setApellidos(rs.getString(5));
+            usuario.setBaja(rs.getString(7));
             acceso = true;
-        }      
+        }
         rs.close();
         s.close();
-        conn.close();
+        conn.close(); */
         return SUCCESS;
     }
 

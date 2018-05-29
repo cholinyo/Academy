@@ -29,23 +29,22 @@
         <div class="container">
             <div class="col-rs 12 panel panel-default ">
                 <div class="panel-heading">
-                    <h2>Alta usuario</h2>
+                    <h2>Alta Asignaturas</h2>
                     <button type="submit" class="btn btn-default"onclick="location.href = 'home.jsp'">Atrás</button>
                 </div>
                 <div class="panel panel-body">
-                    <s:form class="form-horizontal" action="altausuario" namespace="/">
-                        <s:textfield name="login" label="Usuario"/>
-                        <s:textfield name="password" label="Contraseña" />
-                        <s:textfield name="password2" label="Repetir contrasenya" />
-                        <s:textfield name="nombre" label="Nombre" />
-                        <s:textfield name="apellidos" label="Apellidos" />
-                        <s:radio  list="{'admin','profesor','estudiante'}" selected="1" name="rol" label="Rol"/>
+                    
+                    <s:form class="form-horizontal" action="nuevaasignatura" namespace="/">
+                        <s:textfield name="nombre" label="Nombre"/>
+                        <s:textfield name="horario" label="Horario" />
+                        <s:combobox label="Profesor" headerKey="-1" headerValue="--Selecciona--" list="listaprofesores.{login}" name="profesor"/>                            
+                
                         <s:submit class="btn btn-default" value="Enviar"/>
                         <s:url value="http://localhost:8080/Academy/home.jsp" var="urlTag"></s:url>
                     </s:form>
                 </div>
             </div>
-        </div>
+        </div>                      
         <jsp:include page="vistas/pie.jsp" />
     </body>
 </html>

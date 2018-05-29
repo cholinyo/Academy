@@ -8,19 +8,25 @@
 <%@ taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html>
 <html>
+        <%
+            String rol = (String) session.getAttribute("rol");
+            switch (rol) {
+                case "admin":
+                    break;
+                default:
+                    response.sendRedirect("index.html");
+            }
+        %>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    
-    <body>
-        <h1>Edicion usuario</h1>
-        <s:form class="form-horizontal" action="modificausuario" namespace="/">
-             <h2><s:property value="idusuario" /></h2> 
-             <h2><s:property value="login" /></h2>
-              <h2><s:property value="user.getUsuario" /></h2>
-             <h2><s:property value="user.login" /></h2>
-            <s:textfield name="login" label="Usuario" placeholder="%{#user.login}"></s:textfield></s:form>
-        <h2><s:property value="apellidos" /></h2>         
-    </body>
+        <title>Edicion usuario</title>
+        <link rel="stylesheet" type="text/css" href="css/theme.css">
+            <!-- Bootstrap CSS -->
+            <link rel="stylesheet"
+                  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+                  integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+                  crossorigin="anonymous">
+        
+    </head> 
+             <s:action name="datosusario" executeResult="true"/>
 </html>

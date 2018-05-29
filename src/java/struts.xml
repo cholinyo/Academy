@@ -21,6 +21,40 @@
         </action>
         <action name="editarusuario" class="EditarUsuario">
             <result name="success">edicion_usuario.jsp</result>
-        </action>   
+        </action>
+        <action name="nombreusuario" class="Usuario" method="getUsuario"> 
+            <result name="nombreusuario"></result>
+        </action>
+        <action name="listadoasignaturas" class="ListadoAsignaturas">            
+            <result name="success">listado_asignaturas.jsp</result>
+        </action>
+        <action name="datosusario" class="DatosUsuario" >            
+            <result name="success">datos_usuario.jsp</result>
+        </action>
+        <action name="modificausuario" class="ModificaUsuario" >            
+            <result name="success">home.jsp</result>
+            <result name="input">alta_usuario.jsp</result>
+        </action>
+        <action name="bajausuario" class="BajaUsuario" >            
+            <result name="success">home.jsp</result>            
+        </action>
+        <action name="activausuario" class="ActivaUsuario" >            
+            <result name="success">home.jsp</result>            
+        </action>
+        <action name="altaasignaturas" class="ComboProfesores" method="execute" >            
+            <result name="profes">alta_asignatura.jsp</result>            
+        </action>
+        <action name="nuevaasignatura" class="AltaAsignatura" method="execute" >            
+           <result name="success">home.jsp</result>
+            <result name="input">alta_asignatura.jsp</result>             
+        </action>
+        <action name="activaasignatura" class="ActivaAsignatura" >            
+            <result name="success">home.jsp</result>            
+        </action>
+         <action name="bajaasignatura" class="BajaAsignatura" >            
+            <result name="success">home.jsp</result>            
+        </action>
+        
+           
     </package>
 </struts>
