@@ -1,4 +1,6 @@
 
+
+
 import com.opensymphony.xwork2.ActionSupport;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -19,7 +21,7 @@ import javax.sql.DataSource;
  *
  * @author vcaruncho
  */
-public class ListaTurorias extends ActionSupport {
+public class ListaTutorias extends ActionSupport {
     private int idusuario;
     private String dia;
     private String hora;
@@ -81,11 +83,11 @@ public class ListaTurorias extends ActionSupport {
     
     
     
-    public ListaTurorias() {
+    public ListaTutorias() {
     }
     
     public String execute() throws Exception {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return SUCCESS;
     }
 
 }

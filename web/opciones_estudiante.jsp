@@ -17,16 +17,28 @@
         <div class="panel panel-body">
             <div class="seleccion col-rs-4 panel panel-default">
                 <div class="panel-heading">
-                    <h3>Asignaturas</h3>
+                    <h3>Asignaturas y Tutorias</h3>
                 </div>
                 <div class="panel-body">
                     <ul class="list-inline">
                         <li><a href="<s:url action="listadoasignaturasalumno" includeParams="get">
-                               <s:param name="idusuario" value="idusuario">                        
+                               <s:param name="idusuario" value="%{#session.idusuario}">                        
                                 </s:param>
                                 <s:param name="login" value="%{#session.login}">                        
                                 </s:param>
                                 </s:url>">Ver mis asignaturas</a></li>
+                        <li><a href="<s:url action="solicitartutoria" includeParams="get">
+                               <s:param name="idusuario" value="%{#session.idusuario}">                        
+                                </s:param>
+                                <s:param name="login" value="%{#session.login}">                        
+                                </s:param>
+                                </s:url>">Solicitar tutoria</a></li>
+                        <li><a href="<s:url action="estadotutorias" includeParams="get">
+                               <s:param name="idalumno" value="%{#session.idusuario}">                        
+                                </s:param>
+                                <s:param name="login" value="%{#session.login}">                        
+                                </s:param>
+                                </s:url>">Ver estado mis tutorias</a></li>
                     </ul>
                 </div>
             </div>

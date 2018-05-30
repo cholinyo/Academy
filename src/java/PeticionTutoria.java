@@ -1,11 +1,7 @@
 
-
-
 import static com.opensymphony.xwork2.Action.SUCCESS;
-import com.opensymphony.xwork2.ActionSupport;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.Statement;
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
@@ -15,17 +11,45 @@ import javax.sql.DataSource;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 /**
  *
  * @author vcaruncho
  */
-public class AltaTutoria extends ActionSupport {
-
+public class PeticionTutoria {
     private DataSource dataSource;
     private Connection conn;
+    private int idtutoria;
+    private int idalumno;
+    private int idprofesor;
     private String dia;
     private String hora;
-    private int idusuario;
+    private String estado;
+    
+
+    public int getIdtutoria() {
+        return idtutoria;
+    }
+
+    public void setIdtutoria(int idtutoria) {
+        this.idtutoria = idtutoria;
+    }
+
+    public int getIdalumno() {
+        return idalumno;
+    }
+
+    public void setIdalumno(int idalumno) {
+        this.idalumno = idalumno;
+    }
+
+    public int getIdprofesor() {
+        return idprofesor;
+    }
+
+    public void setIdprofesor(int idprofesor) {
+        this.idprofesor = idprofesor;
+    }
 
     public String getDia() {
         return dia;
@@ -43,22 +67,22 @@ public class AltaTutoria extends ActionSupport {
         this.hora = hora;
     }
 
-    public int getIdusuario() {
-        return idusuario;
+    public String getEstado() {
+        return estado;
     }
 
-    public void setIdusuario(int idusuario) {
-        this.idusuario = idusuario;
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
     
     
     
-    public AltaTutoria() {
+   
+    public PeticionTutoria() {
     }
-
-    @Override
+    
     public String execute() throws Exception {
-        boolean acceso = false;
+                boolean acceso = false;
         Context ctx = new InitialContext();
         if (ctx == null) {
             throw new Exception("Error en el context");
@@ -66,17 +90,18 @@ public class AltaTutoria extends ActionSupport {
         dataSource = (DataSource) ctx.lookup("java:comp/env/jdbc/dbacademia");
         conn = dataSource.getConnection();
         /* Statement s = conn.createStatement(); */
-        String qry = "INSERT INTO tutorias (idprofesor, dia, hora) VALUES (?, ?, ?)";
-        PreparedStatement pstmt = conn.prepareStatement(qry);
-        pstmt.setInt(1, idusuario);
-        pstmt.setString(2, dia);
-        pstmt.setString(3, hora);
-        int rs = pstmt.executeUpdate();
-        pstmt.close();
-        conn.close();
 
+        String qry = "INSERT INTO peticionestutorias (idprofesor, idalumno, dia, hora, estado) VALUES (?, ?, ?, ?, ? )";
+        PreparedStatement pstmt = conn.prepareStatement(qry);
+        pstmt.setInt(1, idprofesor);
+        pstmt.setInt(2,idalumno );
+        pstmt.setString(3, dia);
+        pstmt.setString(4, hora);
+        pstmt.setString(5, "pendiente");
+        pstmt.executeUpdate();
         pstmt.close();
         conn.close();
         return SUCCESS;
     }
+    
 }

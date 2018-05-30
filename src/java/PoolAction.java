@@ -16,7 +16,7 @@ import javax.sql.DataSource;
 import org.apache.struts2.interceptor.SessionAware;
 
 
-public class PoolAction extends ActionSupport implements SessionAware {
+public class PoolAction extends ActionSupport implements SessionAware ,Validateable{
 
     private DataSource dataSource;
     private Connection conn;
@@ -48,6 +48,17 @@ public class PoolAction extends ActionSupport implements SessionAware {
     public Map<String, Object> getSession() {
         return sesion;
     }
+    @Override
+    public void validate() {
+        if (usuario == null) {
+        } else {
+            addFieldError("login", "Es necesario introducir un login");
+        }
+        if (contrasena == null) {
+            addFieldError("password", "Es necesario introducir una contraseña");
+        }
+    }
+    
     
     @Override
     public String execute() throws Exception {

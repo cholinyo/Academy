@@ -7,8 +7,7 @@
     <package name="default" extends="struts-default">
         <action name="login" class="PoolAction">
             <result name="input">index.jsp</result>
-            <result name="success">home.jsp</result>
-            <result name="error">index.jsp</result>
+            <result name="success">home.jsp</result>       
         </action>
         <action name="altausuario" class="AltaUsuario">            
             <result name="success">home.jsp</result>
@@ -83,23 +82,14 @@
         <action name="altatutoria" class="AltaTutoria" >            
             <result name="success">home.jsp</result>      
         </action>
+     <!--   <action name="listatutorias" class="ListaTutoria" >            
+            <result name="ok">listado_tutorias.jsp</result>      
+        </action> -->
         <action name="listadoasignaturasalumno" class="MatriculaAlumnos" >            
             <result name="success">asignaturas_matriculado.jsp</result>      
         </action>
-        <action name="solicitartutoria" class="SolicitarTutoria" >            
-            <result name="success">solicitar_tutorias.jsp</result>      
-        </action>
-        <action name="actionsolicitartutoria" class="PeticionTutoria" >            
-            <result name="success">home.jsp</result>      
-        </action>
-        <action name="estadotutorias" class="ListadoPeticionesTutorias" >            
-            <result name="success">listado_peticion_tutorias.jsp</result>      
-        </action>
-        <action name="gestiontutorias" class="GestionTutorias" >            
-            <result name="success">listado_gestion_tutorias.jsp</result>      
-        </action>
-        <action name="actiualizatutorias" class="ActualizarTutorias" >            
-            <result name="success">home.jsp</result>      
+        <action name="solicitartutoria" class="ListaTutorias" >            
+            <result name="listatutorias">solicitar_tutorias.jsp</result>      
         </action>
     </package>
 </struts>

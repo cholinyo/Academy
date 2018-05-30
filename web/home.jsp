@@ -9,7 +9,7 @@
 
 <%
     if (session.getAttribute("login") == null) {
-        response.sendRedirect("index.html");
+        response.sendRedirect("index.jsp");
     }
     String nombre = (String) session.getAttribute("nombre");
 %>

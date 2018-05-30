@@ -110,15 +110,6 @@
                                                     <s:submit/>
                                                 </s:form>
 					</div>
-					<div class="mapa">
-						<h4>Donde encontrarnos</h4>
-
-						<script async defer
-							src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtjplVvvGq514g4FWk9zxRj6Z9jYoyFeg&callback=initMap">
-							
-						</script>
-						<div id="map"></div>
-					</div>
 					<div class="rrss">
 						<a class="twitter-timeline" href="https://twitter.com/vcaruncho"
 							data-widget-id="383545000434221057">Tweets por el @vcaruncho.</a>

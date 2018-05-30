@@ -1,6 +1,4 @@
 
-
-
 import static com.opensymphony.xwork2.Action.SUCCESS;
 import com.opensymphony.xwork2.ActionSupport;
 import java.sql.Connection;
@@ -20,40 +18,48 @@ import javax.sql.DataSource;
  *
  * @author vcaruncho
  */
-public class ActivaAsignatura extends ActionSupport {
-    private DataSource dataSource;
-    private Connection conn;
-    private int idasignatura;
-    
-    public ActivaAsignatura() {
+public class ActualizarTutorias extends ActionSupport{
+    private int idtutoria;
+    private String estado;
+
+    public int getIdtutoria() {
+        return idtutoria;
     }
 
-    public int getIdasignatura() {
-        return idasignatura;
+    public void setIdtutoria(int idtutoria) {
+        this.idtutoria = idtutoria;
     }
 
-    public void setIdasignatura(int idasignatura) {
-        this.idasignatura = idasignatura;
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+           
+    
+    
+    public ActualizarTutorias() {
     }
     
-    
-    @Override
     public String execute() throws Exception {
-       boolean acceso = false;
+        boolean acceso = false;
         Context ctx = new InitialContext();
         if (ctx == null) {
             throw new Exception("Error en el context");
         }
         DataSource dataSource = (DataSource) ctx.lookup("java:comp/env/jdbc/dbacademia");
-        conn = dataSource.getConnection();
+        Connection conn = dataSource.getConnection();
         Statement s = conn.createStatement();
-        String valor=null;
-        String query = "UPDATE asignaturas SET  Estado='alta' WHERE idasignatura='" + idasignatura + "'";
+        String query = "UPDATE peticionestutorias SET estado=? WHERE idpeticion='" + idtutoria + "'";
         PreparedStatement pstmt = conn.prepareStatement(query);
+        pstmt.setString(1, estado);
         int rs = pstmt.executeUpdate();
         pstmt.close();
         conn.close();
         s.close();
         return SUCCESS;
     }
+    
 }
