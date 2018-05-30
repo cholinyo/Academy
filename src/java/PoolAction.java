@@ -48,13 +48,13 @@ public class PoolAction extends ActionSupport implements SessionAware ,Validatea
     public Map<String, Object> getSession() {
         return sesion;
     }
+   
     @Override
     public void validate() {
-        if (usuario == null) {
-        } else {
+        if (usuario.length() == 0) {
             addFieldError("login", "Es necesario introducir un login");
         }
-        if (contrasena == null) {
+        if (contrasena.length() == 0) {
             addFieldError("password", "Es necesario introducir una contraseña");
         }
     }

@@ -15,7 +15,7 @@
             <result name="input">alta_usuario.jsp</result>                 
         </action>
         <action name="listadoestudiantes" class="ListadoUsuarios">            
-            <result name="Listado">listado_estudiantes.jsp</result>
+        <result name="Listado">listado_estudiantes.jsp</result>
         </action>
         <action name="listadoprofesores" class="ListadoUsuarios">            
             <result name="Listado">listado_profesores.jsp</result>
