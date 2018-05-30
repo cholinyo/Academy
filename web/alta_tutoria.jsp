@@ -1,3 +1,9 @@
+<%-- 
+    Document   : alta_tutoria
+    Created on : 29-may-2018, 21:46:39
+    Author     : vcaruncho
+--%>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
 <%@taglib prefix="s" uri="/struts-tags" %>
@@ -7,7 +13,7 @@
     <%
         String rol = (String) session.getAttribute("rol");
         switch (rol) {
-            case "admin":
+            case "profesor":
                 break;
             default:
                 response.sendRedirect("index.jsp");
@@ -21,7 +27,7 @@
               crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="css/theme.css"">
         <script src="js/funciones.js" type="text/javascript"></script>
-        <title>Alta usuario</title>
+        <title>Alta tutorias</title>
     </head>
 
     <body>
@@ -29,18 +35,16 @@
         <div class="container">
             <div class="col-rs 12 panel panel-default ">
                 <div class="panel-heading">
-                    <h2>Alta usuario</h2>
+                    <h2>Alta tutorias del profesor <%=session.getAttribute("login")%></h2>
+                    <li><%=session.getAttribute("idusuario")%></li>
                     <button type="submit" class="btn btn-default"onclick="location.href = 'home.jsp'">Atrás</button>
                 </div>
                 <div class="panel panel-body">
-                    <s:form class="form-horizontal" action="altausuario" namespace="/">
-                        <s:textfield name="login" label="Usuario"/>
-                        <s:textfield name="password" label="Contraseña" />
-                        <s:textfield name="password2" label="Repetir contrasenya" />
-                        <s:textfield name="nombre" label="Nombre" />
-                        <s:textfield name="apellidos" label="Apellidos" />
-                        <s:radio  list="{'admin','profesor','estudiante'}" selected="1" name="rol" label="Rol"/>
-                        <s:submit class="btn btn-default" value="Enviar"/>
+                    <s:form class="form-horizontal" action="altatutoria" namespace="/">
+                        <s:radio  list="{'lunes','martes','miercoles','jueves','viernes'}" selected="1" name="dia" label="Dia"/>
+                        <s:textfield name="hora" label="Hora" maxLength="2" />
+                        <s:hidden name="idusuario" value="%{#session.idusuario}" />
+                        <s:submit class="btn btn-default" value="Crear"/>
                         <s:url value="http://localhost:8080/Academy/home.jsp" var="urlTag"></s:url>
                     </s:form>
                 </div>

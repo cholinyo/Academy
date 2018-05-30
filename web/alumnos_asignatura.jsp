@@ -1,6 +1,6 @@
 <%-- 
-    Document   : listado_usuarios_rol.jsp
-    Created on : 19-may-2018, 13:00:53
+    Document   : matriculas
+    Created on : 29-may-2018, 12:20:29
     Author     : vcaruncho
 --%>
 <%@ taglib prefix="s" uri="/struts-tags" %>
@@ -14,7 +14,7 @@
             case "profesor":
                 break;
             default:
-                response.sendRedirect("index.html");
+                response.sendRedirect("index.jsp");
         }
     %>
     <head>
@@ -33,36 +33,29 @@
             <div class="col-rs 12 panel panel-default ">
                 <button type="submit" class="btn btn-default"onclick="location.href = 'home.jsp'">Atrás</button>
                 <div class="panel-heading">
-                    <h2>Asignaturas impartidas por: <%=session.getAttribute("login")%> </h2>
+                    <h2>Listado de alumnos matriculados en la asignatura  <s:property value="nombre"/></h2>
+                    <ul>
+                        <li>cod:<s:property value="idasignatura"/></li></ul>
                     <table class="table table-striped">
                         <th>Id</th>
-                        <th>Asignatura</th>
-                        <th>Horario</th>
-                        <th>Estado</th>
-                        <th>Alumnos matriculados</th>
-                            <s:iterator value="listaasignaturas">
+                        <th>Login</th>
+                        <th>Nombre</th>
+                        <th>Apellidos</th>
+                            <s:iterator value="listamatriculados">
                             <tr>
-                                <td><s:property value="idasignatura"></s:property></td>
+                                <td><s:property value="idusuario"></s:property></td>
+                                <td><s:property value="login"></s:property></td>
                                 <td><s:property value="nombre"></s:property></td>
-                                <td><s:property value="horario"></s:property></td>
-                                <td><s:property value="estado"></s:property></td>
-                                <td><a href=" <s:url action="alumnosasignaturas" includeParams="get">
-                                           <s:param name="idasignatura" value="idasignatura">                        
-                                           </s:param>
-                                           <s:param name="nombre" value="nombre">                        
-                                           </s:param>
-                                           <s:param name="profesor" value="profesor">                        
-                                           </s:param>
-                                       </s:url>">Ver alumnos</a></td> 
-
+                                <td><s:property value="apellidos"></s:property></td>
+  
                             </tr>
-                        </s:iterator>
+                        </s:iterator>    
                     </table>
                     </p>
                 </div>
             </div>
         </div>
         <jsp:include page="vistas/pie.jsp" />
+
     </body>
 </html>
-

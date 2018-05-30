@@ -1,8 +1,9 @@
 <%-- 
-    Document   : listado_usuarios_rol.jsp
-    Created on : 19-may-2018, 13:00:53
+    Document   : asignaturas_matriculado
+    Created on : 30-may-2018, 12:51:23
     Author     : vcaruncho
 --%>
+
 <%@ taglib prefix="s" uri="/struts-tags" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -11,7 +12,7 @@
     <%
         String rol = (String) session.getAttribute("rol");
         switch (rol) {
-            case "profesor":
+            case "estudiante":
                 break;
             default:
                 response.sendRedirect("index.html");
@@ -33,31 +34,54 @@
             <div class="col-rs 12 panel panel-default ">
                 <button type="submit" class="btn btn-default"onclick="location.href = 'home.jsp'">Atrás</button>
                 <div class="panel-heading">
-                    <h2>Asignaturas impartidas por: <%=session.getAttribute("login")%> </h2>
+                    <h2>Asignaturas en las que estás matriculado</h2>
                     <table class="table table-striped">
                         <th>Id</th>
                         <th>Asignatura</th>
                         <th>Horario</th>
-                        <th>Estado</th>
-                        <th>Alumnos matriculados</th>
-                            <s:iterator value="listaasignaturas">
+                        <th>Profesor</th>
+                        <th>Solicitar tutoria</th>
+                        <th>Dar de baja</th>
+                            <s:iterator value="listamatriculadas">
+
                             <tr>
                                 <td><s:property value="idasignatura"></s:property></td>
                                 <td><s:property value="nombre"></s:property></td>
                                 <td><s:property value="horario"></s:property></td>
-                                <td><s:property value="estado"></s:property></td>
-                                <td><a href=" <s:url action="alumnosasignaturas" includeParams="get">
+                                <td><s:property value="profesor"></s:property></td>
+                                <td><a href=" <s:url action="solicitartutoria" includeParams="get">
                                            <s:param name="idasignatura" value="idasignatura">                        
-                                           </s:param>
-                                           <s:param name="nombre" value="nombre">                        
                                            </s:param>
                                            <s:param name="profesor" value="profesor">                        
                                            </s:param>
-                                       </s:url>">Ver alumnos</a></td> 
-
+                                       </s:url>">Solicitar tutoria</a></td>                              
                             </tr>
-                        </s:iterator>
+                        </s:iterator>    
                     </table>
+                    <p>
+                        <s:if test="anterior>-1">
+                            <s:url action="listadoasignaturas" var="ant">
+                                <s:param name="npage">
+                                    <s:property value="anterior" />
+                                </s:param>
+                            </s:url>
+                            <a href="<s:property value="#ant" />"><</a>
+                        </s:if>
+                        <s:else>
+                            <
+                        </s:else>
+                        ...
+                        <s:if test="posterior>-1">
+                            <s:url action="listadoasignaturas" var="sig">
+                                <s:param name="npage">
+                                    <s:property value="posterior"/>
+                                </s:param>
+                            </s:url>
+                            <a href="<s:property value="#sig" />">></a>
+                        </s:if> 
+                        <s:else>
+                            >
+                        </s:else>
                     </p>
                 </div>
             </div>
@@ -65,4 +89,5 @@
         <jsp:include page="vistas/pie.jsp" />
     </body>
 </html>
+
 

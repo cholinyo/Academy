@@ -60,12 +60,14 @@ public class PoolAction extends ActionSupport implements SessionAware {
         String query = "select * from usuarios where " + "login='"+usuario+"' and password='"+contrasena+"'";
         ResultSet rs = s.executeQuery(query);
         if (rs.next()) acceso=true;
+        int idusuario = rs.getInt(1);
+        String login = rs.getString(2);
         String rol = rs.getString(6);
         rs.close();
         s.close();
         conn.close();
         if (acceso) {
-            sesion.put("login", usuario);  
+            sesion.put("login", login);  
             sesion.put("idusuario", idusuario);
             sesion.put("rol", rol);
             /*Faltara el rol*/

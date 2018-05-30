@@ -76,5 +76,17 @@
         <action name="listadoasignaturasprofesor" class="Profesor" >            
             <result name="success">asignaturas_profesor.jsp</result>      
         </action>
+        <action name="alumnosasignaturas" class="Matriculados" >            
+            <result name="success">alumnos_asignatura.jsp</result>      
+        </action>
+        <action name="altatutoria" class="AltaTutoria" >            
+            <result name="success">home.jsp</result>      
+        </action>
+     <!--   <action name="listatutorias" class="ListaTutoria" >            
+            <result name="ok">listado_tutorias.jsp</result>      
+        </action> -->
+        <action name="listadoasignaturasalumno" class="MatriculaAlumnos" >            
+            <result name="success">asignaturas_matriculado.jsp</result>      
+        </action>
     </package>
 </struts>

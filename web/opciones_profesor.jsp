@@ -17,21 +17,24 @@
                 <div class="panel-heading">
                     <h3>Portal Administración Profesor</h3>
                 </div>
-                <div class="panel-body">
+                <div class="panel-body" >
                     <ul class="list-inline">
                         <li><a href=" <s:url action="listadoasignaturasprofesor" includeParams="get">
-                                           <s:param name="idusuario" value="idasignatura">                        
-                                           </s:param>
-                                           <s:param name="login" value="%{#session.login}">                        
-                                           </s:param>
-                                       </s:url>">Ver mis asignaturas</a></li>
-                        <li><a href="<s:url action="listadoasignaturasprofesor" />">Ver mis asignaturas<img src="">
-                                <s:param name="login" value="session.getAttribute('login')"/></a></li>
-                        <li><a href="<s:url action="creartutorias"  />">Crear Tutorias<img src="">
+                                   <s:param name="idusuario" value="idasignatura">                        
+                                   </s:param>
+                                   <s:param name="login" value="%{#session.login}">                        
+                                   </s:param>
+                               </s:url>">Ver mis asignaturas</a></li>
+                        <li><a href="alta_tutoria.jsp">Crear Tutorias<img src="">
                             </a></li>
                         <li><a href="<s:url action="gestiontutorias"  />">Gesionar Tutorias<img src="">
                             </a></li>
                     </ul>
+                </div>
+                <div class="panel-body" >
+                    <s:action name="listadotutorias" executeResult="true">
+                        
+                    </s:action>
                 </div>
             </div>
         </div>

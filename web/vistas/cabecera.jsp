@@ -12,7 +12,7 @@
 		<li><a href="http://localhost:8080/Academy/donde.html">Donde
 				estamos</a></li>
 		<li><a href="http://localhost:8080/Academy/blog.html">Blog</a></li>
-		<li><a href="#">Hola <i><%=session.getAttribute("login") %> <%=session.getAttribute("rol") %></i></a></li>
+		<li><a href="#">Hola <i><%=session.getAttribute("login") %></i></a></li>
 		<li><a href="Logout">Logout</a></li>
 	</ul>           
 </nav>
